@@ -1,0 +1,33 @@
+
+ssh <name>@<ip> (kullanıcı hesabına giriş yapmaya çalış)
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+scp 
+
+scp dosya.txt kullanıcı@192.168.1.10:/hedef/klasör/ (dosya kopyalama)
+
+Port yönlendirme (Tunneling, Proxy)
+
+Örn: Yerel bilgisayardaki 8080 portunu uzak sunucudaki 80 portuna yönlendirme:
+
+ssh -L 8080:localhost:80 <name>@<ip>
+
+VPN benzeri kullanım (trafik yönlendirme).
+
+Otomasyon: Script’ler ile uzaktan komut çalıştırma.
+
+Parola ile giriş
+En basit yöntem ama en güvensizdir.
+
+Anahtar tabanlı giriş (SSH Keys) ✅ en güvenli yöntem
+Özel anahtar (private key) → Sende kalır.
+Genel anahtar (public key) → Sunucuya yüklenir.
+
+Bağlantı kurulurken özel anahtar ile imza atılır, sunucu public key ile doğrular.
+ssh-keygen -t rsa -b 4096 -C "email@ornek.com"
+
+Anahtarı sunucuya kopyalama:
+ssh-copy-id <name>@<ip>
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
