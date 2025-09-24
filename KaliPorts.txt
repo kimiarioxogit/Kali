@@ -1,0 +1,104 @@
+20, 21 	TCP 	FTP 		File Transfer Protocol - used for transferring files.
+22 	TCP 	SSH 		Secure Shell - remote login and command execution.
+23 	TCP 	Telnet 		Unsecured text-based remote login (deprecated due to insecurity).
+25 	TCP 	SMTP 		Simple Mail Transfer Protocol - for sending emails.
+53 	TCP/UDP DNS 		Domain Name System - resolves domain names to IP addresses.
+67, 68 	UDP 	DHCP 		Dynamic Host Configuration Protocol - assigns IP addresses automatically.
+69 	UDP 	TFTP 		Trivial File Transfer Protocol - simple file transfer without authentication.
+80 	TCP 	HTTP 		HyperText Transfer Protocol - used for web browsing.
+110 	TCP 	POP3 		Post Office Protocol v3 - retrieves emails.
+123 	UDP 	NTP 		Network Time Protocol - synchronizes system clocks.
+135 	TCP/UDP RPC 		Remote Procedure Call - used by Windows services.
+137-139 	TCP/UDP 	NetBIOS 	Used for file and printer sharing on Windows networks.
+143 	TCP 	IMAP 		Internet Message Access Protocol - fetches emails.
+161-162 	UDP 		SNMP 	Simple Network Management Protocol - monitors network devices.
+389 	TCP/UDP LDAP 		Lightweight Directory Access Protocol - used for accessing directory services.
+443 	TCP 	HTTPS 		Secure HTTP - encrypts web traffic using SSL/TLS.
+445 	TCP 	SMB 		Server Message Block - file sharing and communication in Windows.
+514 	UDP 	Syslog 		Sends system logs to remote servers.
+993 	TCP 	IMAPS 		Secure IMAP over SSL/TLS.
+995 	TCP 	POP3S 		Secure POP3 over SSL/TLS.
+1433 	TCP 	MS SQL Server 	Used for Microsoft SQL Server database communication.
+1521 	TCP 	Oracle DB 	Oracle database default port.
+3306 	TCP 	MySQL 		Used by MySQL database systems.
+3389 	TCP 	RDP 		Remote Desktop Protocol - remote graphical access to Windows.
+5432 	TCP 	PostgreSQL 	PostgreSQL database communication.
+5900 	TCP 	VNC 		Virtual Network Computing - remote desktop sharing.
+8080 	TCP 	HTTP-Alt/Proxy 	Alternate HTTP port or used by proxy servers.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Port 21 Vulnerabilities (FTP)
+
+The File Transfer Protocol (FTP) is assigned port 21. FTP enables users to send and receive files in an unencrypted transmission to and from servers. FTP is considered outdated and insecure and should not be used for any file transfers, especially any sensitive data, as it can easily be exploited using any of the following methods:
+Brute-forcing passwords
+Anonymous authentication (it’s possible to log into the FTP port with “anonymous” as the username and password)
+Cross-site scripting
+Directory traversal attacks
+Man-in-the-middle
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Port 22 Vulnerabilities (SSH)
+
+Port 22 is commonly used for Secure Shell connections. It is preferred over Telnet because the connection is encrypted. Often used for remote management, Port 22 is a TCP port for ensuring secure remote access. Despite its enhanced security, it still suffers from some basic vulnerabilities:
+Leaked SSH keys. If SSH keys are not correctly secured, they can be accessed by an attacker to gain entry without having the required password.
+Brute-forcing Credentials. Open SSH ports are easily discoverable, allowing attackers to guess username and password combinations.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Port 23 Vulnerabilities (Telnet)
+
+Telnet is a TCP protocol that uses port 23. It connects to remote devices that utilize command line interfaces such as switches, routers, and servers. Like FTP, Telnet is unencrypted, outdated and considered insecure. It has been superseded by SSH. Some of its common vulnerabilities include:
+Credential brute-forcing. Attackers exploit open port vulnerabilities to launch repeated login attempts against exposed services, attempting to gain unauthorized access by guessing credentials.
+Spoofing and credential sniffing. Open ports can expose services to attackers who exploit them to intercept and steal credentials, often by posing as legitimate entities during data transmission.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Port 25 Vulnerabilities (SMTP)
+
+Port 25 is used by the Simple Mail Transfer Protocol (SMTP) for sending and receiving emails. SMTP was developed when cybersecurity was not a significant concern, so it can easily be exploited without third-party security solutions. Without proper configuration and protection, this TCP port is vulnerable to threats such as:
+Spoofing. Attackers can forge email headers to make messages appear as though they are coming from a trusted source.
+Spamming. Unprotected SMTP servers can be exploited to send large volumes of unsolicited emails, often overwhelming systems and spreading malware.
+Man-in-the-middle, especially when the email itself is sent in clear text.
+	
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Port 53 is used for the Domain Name System (DNS), which translates human-readable domain names such as facebook.com or linkedin.com into IP addresses. DNS is essential for internet traffic, and it operates using both UDP and TCP for queries and transfers, respectively. This port is particularly vulnerable to Distributed Denial of Service (DDoS) attacks, where attackers overwhelm the DNS server with a flood of requests, potentially disrupting service.
+DDoS attacks. These are common attacks in which attackers try to overwhelm the server with large volumes of packets to cause service disruption. This attack vector has some flavors, dDoS (distributed denial of service) and DNS amplification attacks.
+
+Port 25 is used by the Simple Mail Transfer Protocol (SMTP)
+
+Ports 137 and 139 (NetBIOS over TCP) and 445 (SMB) 
+are commonly associated with file sharing and 
+network communication in Windows environments. However, they are also known to be vulnerable to several security threats:
+EternalBlue exploit. This attack takes advantage of SMBv1 vulnerabilities in older versions of Microsoft computers. It became well known after the WannaCry ransom attack launched on a global scale in 2017.
+Capturing NTLM Hashes. Attackers can intercept and capture NTLM hashes and use them to authenticate as legitimate users.
+Brute-Forcing SMB Login Credentials. Attackers may attempt to gain access by systematically trying different username and password combinations until they find the correct credentials.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Ports 80, 443, 8080, and 8443 Vulnerabilities (HTTP and HTTPS)
+
+Anyone who has visited a web page has used the HTTP or HTTPS protocols in their web browser. As mentioned, web ports are commonly targeted by attackers for many types of attacks, including:
+Cross-site scripting. Attackers inject malicious scripts into web pages and applications to steal cookies, tokens, or data.
+SQL injections. Attackers insert malicious SQL code into input fields to manipulate a database.
+Cross-site request forgers. An attacker exploits the trust between a user’s web browser and a web application to trick the user into performing actions on a website without their knowledge or consent. DDoS attacks
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Ports 1433, 1434, and 3306 Vulnerabilities (Used by databases)
+
+These are the default ports for SQL Server and MySQL. They are used to perform a variety of malicious deeds, including:
+Distributing malware. Attackers use open ports to infiltrate a network, distributing malicious software that can compromise systems, steal data, or damage infrastructure.
+DDoS Scenarios. Open port vulnerabilities are exploited to overwhelm services with massive traffic in Distributed Denial of Service (DDoS) attacks, rendering systems unusable.
+Find unprotected databases with exploitable default configurations. Open ports can expose databases with weak or default settings, allowing attackers to efficiently exploit them to gain unauthorized access and manipulate or steal sensitive information.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Port 3389 vulnerabilities (Remote Desktop)
+
+Remote Desktop Protocol vulnerabilities expose RDP to brute force attacks and man-in-the-middle attacks.
+BlueKeep Vulnerability (CVE-2019-0708) is a RDP vulnerability found in older Microsoft operating systems such as Windows 7 and Windows Server 2008. BlueKeep can be exploited to spread malware across an organization without user intervention.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

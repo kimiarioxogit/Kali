@@ -1,0 +1,25 @@
+smbmap -H 192.168.1.10	Anonim (şifresiz) olarak SMB paylaşım taraması yapar.
+
+smbmap -H 192.168.1.10 -u kullanıcı -p parola	Belirtilen kullanıcı adı ve parola ile SMB paylaşımlarını tarar.
+
+smbmap -H 192.168.1.10 -u kullanıcı -p parola -d domain	Belirtilen domain kimlik bilgileri ile SMB taraması yapar.
+
+smbmap -H 192.168.1.10 -u kullanıcı -p parola --shares	Paylaşımları ve erişim izinlerini listeler.
+
+smbmap -H 192.168.1.10 -u kullanıcı -p parola -R PaylasimAdi	Belirtilen paylaşımda (örneğin C$) dosya ve klasörleri listeler.
+
+smbmap -H 192.168.1.10 -u kullanıcı -p parola --download "paylaşım/dosya.txt"	Belirtilen dosyayı indirir.
+
+smbmap -H 192.168.1.10 -u kullanıcı -p parola --upload /yerel/dosya.txt -r hedef/klasor	Belirtilen dosyayı hedef klasöre yükler.
+
+smbmap -H 192.168.1.10 -u kullanıcı -p parola --del "paylaşım/dosya.txt"	Belirtilen dosyayı siler (eğer yazma yetkisi varsa).
+
+smbmap -H 192.168.1.10 -u kullanıcı -p parola --depth 3	Klasör tarama derinliğini belirler (varsayılan: 1).
+
+smbmap -H 192.168.1.10 -u kullanıcı -p parola -r PaylasimAdi -A ".txt"	Paylaşım içinde .txt uzantılı dosyaları arar.
+
+smbmap -H 192.168.1.10 -u kullanıcı -p parola --search password	SMB paylaşımlarında "password" kelimesini içeren dosya isimlerini arar.
+
+smbmap -L	Yerel makinadaki SMB oturumlarını listeler (Linux sistemlerde root gerektirir).
+
+smbmap -h	Yardım menüsünü gösterir; tüm komut seçeneklerini listeler.

