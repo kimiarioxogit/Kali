@@ -20,7 +20,7 @@ Otomasyon: Script’ler ile uzaktan komut çalıştırma.
 Parola ile giriş
 En basit yöntem ama en güvensizdir.
 
-Anahtar tabanlı giriş (SSH Keys) ✅ en güvenli yöntem
+Anahtar tabanlı giriş (SSH Keys) en güvenli yöntem
 Özel anahtar (private key) → Sende kalır.
 Genel anahtar (public key) → Sunucuya yüklenir.
 
