@@ -49,6 +49,8 @@ Brute-forcing Credentials. Open SSH ports are easily discoverable, allowing atta
 
 Port 23 Vulnerabilities (Telnet)
 
+merhaba
+
 Telnet is a TCP protocol that uses port 23. It connects to remote devices that utilize command line interfaces such as switches, routers, and servers. Like FTP, Telnet is unencrypted, outdated and considered insecure. It has been superseded by SSH. Some of its common vulnerabilities include:
 Credential brute-forcing. Attackers exploit open port vulnerabilities to launch repeated login attempts against exposed services, attempting to gain unauthorized access by guessing credentials.
 Spoofing and credential sniffing. Open ports can expose services to attackers who exploit them to intercept and steal credentials, often by posing as legitimate entities during data transmission.
